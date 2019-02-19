@@ -7,6 +7,7 @@
                  :columnDefs="columnDefs"
                  :rowData="rowData">
     </ag-grid-vue>
+    <div id="x-spreadsheet-demo"></div>
   </div>
 </template>
 

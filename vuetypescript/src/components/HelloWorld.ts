@@ -1,11 +1,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import button from "./button/button";
 // 引入组件
-import {AgGridVue} from 'ag-grid-vue';
+import { AgGridVue } from "ag-grid-vue";
+import Spreadsheet from "x-data-spreadsheet";
 @Component({
   components: {
     "ll-button": button,
-    "ag-grid-vue":AgGridVue
+    "ag-grid-vue": AgGridVue
   }
 })
 export default class HelloWorld extends Vue {
@@ -18,14 +19,14 @@ export default class HelloWorld extends Vue {
     this.msg = "6";
   }
   beforeMount() {
-    console.log(1)
-    console.log(1)  
-    console.log(1) 
-     console.log(1) 
-      console.log(1) 
-       console.log(1) 
-        console.log(1)  
-        console.log(1)
+    console.log(1);
+    console.log(1);
+    console.log(1);
+    console.log(1);
+    console.log(1);
+    console.log(1);
+    console.log(1);
+    console.log(1);
     this.columnDefs = [
       { headerName: "Make", field: "make" },
       { headerName: "Model", field: "model" },
@@ -37,5 +38,12 @@ export default class HelloWorld extends Vue {
       { make: "Ford", model: "Mondeo", price: 32000 },
       { make: "Porsche", model: "Boxter", price: 72000 }
     ];
+  }
+  mounted() {
+    new Spreadsheet("#x-spreadsheet-demo")
+      .loadData({}) // load data
+      .change({
+        // save data to db
+      });
   }
 }
